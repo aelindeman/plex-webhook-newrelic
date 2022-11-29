@@ -6,15 +6,14 @@ Reports Plex events to New Relic
 
 1. Create an insert key on New Relic (_Account → API Keys → Create a key → Key type: "Ingest - License"_)
 
-1. Build and run the image
+1. Run it where Plex can see it
 
     ```
-    docker build -t plex-webhook-newrelic:latest .
     docker run \
       -d
       -e NEW_RELIC_INSERT_KEY
       -p 8080:8080 \
-      plex-webhook-newrelic:latest
+      ghcr.io/aelindeman/plex-webhook-newrelic:latest
     ```
 
 1. Open [Plex webhook settings](https://app.plex.tv/desktop/#!/settings/webhooks), and add the webhook `http://localhost:8080/webhook`
