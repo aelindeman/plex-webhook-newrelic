@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "plex-webhook-newrelic"
+version = "1.0.0"
+description = "Reports Plex events to New Relic"
+authors = ["Alex Lindeman <aelindeman@users.noreply.github.com>"]
+license = "Creative Commons BY-SA 4.0"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^8.0.0"
+flask = "^2.1.0"
+newrelic-telemetry-sdk = "^0.4.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.0.0"
+mypy = "^0.940"
+
+[tool.poetry.scripts]
+app = "app:main"
+
+[build-system]
+requires = ["poetry-core>=1.1.13"]
+build-backend = "poetry.core.masonry.api"
