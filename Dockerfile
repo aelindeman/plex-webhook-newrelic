@@ -14,8 +14,8 @@ RUN --mount=type=cache,target=/tmp/pip \
 
 FROM python:3.10-alpine
 WORKDIR /app
-COPY --from=develop /app/dist/app-*.whl /tmp/
-RUN pip install /tmp/app-*.whl && \
-    rm /tmp/app-*.whl
-ENTRYPOINT ["/usr/local/bin/app"]
+COPY --from=develop /app/dist/plex_webhook_newrelic-*.whl /tmp/
+RUN pip install /tmp/plex_webhook_newrelic-*.whl && \
+    rm /tmp/plex_webhook_newrelic-*.whl
+ENTRYPOINT ["/usr/local/bin/plex-webhook-newrelic"]
 CMD []
